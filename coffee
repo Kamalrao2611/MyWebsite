@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Proposal to You</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f0f0; padding: 50px; position: relative; min-height: 100vh; }
+        h1 { color: #d63384; }
+        p { font-size: 18px; max-width: 600px; margin: 0 auto; }
+        .button-container { display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 20px; } /* Flexbox for alignment */
+        button { background-color: #d63384; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+        #yesButton { font-size: 24px; padding: 20px 40px; border-radius: 15px; } /* Big "Of course!" button */
+        #noButton { font-size: 16px; padding: 10px 20px; position: relative; } /* "No" button starts relative, moves to absolute on click */
+    </style>
+</head>
+<body>
+    <h1>Will You On A Coffee Date With Me ?</h1>
+    <p>Dear Sonia, I've been wanting to say this for a while. You're amazing. From our first conversation to talking till midnights, you've made me so happy. Will you go on this adventure with me?</p>
+    
+    <div class="button-container">
+        <button id="yesButton" onclick="alert('Come text on Insta now')">Of course!</button>
+        <button id="noButton" onclick="changeNoButton()">No</button>
+    </div>
+
+    <script>
+        const noTexts = [
+            "No",
+            "Are you sure?",
+            "Really",
+            "Think Again",
+            "Don't Be Silly",
+            "Please Reconsider",
+            "You Might regret this",
+            "Are you certain?",
+            "Last Cancel",
+            "Come on, give it a chance!",
+            "I promise it'll be fun!",
+            "Just say yes!",
+            "You're breaking my heart!",
+            "Final warning!",
+            "Okay, I give up... but please?"
+        ];
+        let currentIndex = 0;
+        const noButton = document.getElementById('noButton');
+
+        function changeNoButton() {
+            if (currentIndex < noTexts.length - 1) {
+                // Still cycling through texts
+                currentIndex++;
+                noButton.textContent = noTexts[currentIndex];
+                
+                // Change to absolute positioning and move randomly
+                
+            } else if (currentIndex === noTexts.length - 1) {
+                // After the last text, show the alert on the next click
+                alert("That's heartbreaking, close it and move on");
+                currentIndex++; // Increment to prevent further actions
+            }
+            // If currentIndex > noTexts.length - 1, do nothing
+        }
+    </script>
+</body>
+</html>
